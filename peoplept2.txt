@@ -1,0 +1,22 @@
+1) db.people.insertOne({first_name: 'Tom', last_name: 'Holland', email: 'hollandtom@gmail.com', gender: 'Male', age: 26, state: 'NV', children: []} )
+
+2)db.people.insertOne({ first_name: 'Jim', last_name: 'Barley', email: 'jbar@aol.net', gender: 'Male', age: 51, state: 'Wisconsin', children: [{name: 'Mary', age: 28}, {name: 'Kate', age: 22}] })
+
+3)db.people.updateOne({first_name: 'Clarence'}, {$set: {state: 'South Dakota'}})
+
+4)db.people.updateOne({first_name: 'Rebecca'}, {$unset: {email: 1}})
+
+5)db.people.updateMany({state: 'Missouri'}, { $inc: {age: 1}})
+
+6)db.people.replaceOne({last_name: 'Baker'},{ first_name: "Jerry", last_name: "Baker-Mendez", email: "jerry@classic.ly", gender:"Male", age: 28, state: "Vermont", "children": [{name: "Alan", age: 18}, {name: "Jenny", age: 3}] }
+ )
+
+7)db.people.deleteOne({first_name: 'Wanda'})
+
+8)db.people.deleteMany({email: null})
+
+9)db.submissions.insertMany([{title: 'The River Bend', upvotes: 10, downvotes: 2, artist: ObjectId('6369bc98d951a4a5bdd85afa')}, {title: "Nine Lives", upvotes: 7, downvotes: 0, artist: ObjectId('6369bc98d951a4a5bdd85b28')}, {title: "Star Bright", upvotes: 19, downvotes: 3, artist: ObjectId('6369bc98d951a4a5bdd85bab')}, {title: "Why Like This?", upvotes: 1, downvotes: 5, artist: ObjectId('6369bc98d951a4a5bdd85b31')}, {title: "Non Sequitur", upvotes: 11, downvotes: 1, artist: ObjectId('6369bc98d951a4a5bdd85af8')}])
+
+10)db.submissions.updateOne({title: 'The River Bend'}, {$inc: { upvotes: 2}})
+
+11)db.submissions.updateMany({upvotes: {$gte: 10}}, {$set: {round2: true}})
